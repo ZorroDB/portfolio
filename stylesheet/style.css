@@ -1,0 +1,185 @@
+/* HTML PAGE */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+  color: var(--text-color-light);
+  background-color: var(--background-color-light);
+  overflow-x: hidden;
+}
+.gap {
+  height: 100px;
+  width: 100%;
+}
+:root {
+  --text-color-light: rgb(43, 43, 43);
+  --background-color-light: white;
+  --text-color-dark: white;
+  --background-color-dark: rgb(43, 43, 43);
+}
+.dark-mode {
+  color: var(--text-color-dark);
+  background-color: var(--background-color-dark);
+}
+/* HEADER */
+.offcanvas {
+  width: 20vw !important;
+  background-color: white !important;
+}
+.navbar-brand {
+  font-size: 20px;
+  transition: font-size 0.3s;
+}
+.navbar-brand:hover {
+  font-size: 30px;
+}
+.navbar-brand:not(:hover) {
+  font-size: 20px;
+}
+
+.nav-link {
+  font-size: 16px;
+  transition: font-size 0.3s;
+}
+.nav-link:hover {
+  font-size: 20px;
+}
+.nav-link:not(:hover) {
+  font-size: 16px;
+}
+
+/* ARROW */
+
+.arrow-down {
+  position: fixed;
+  bottom: 20px; /* adjust as needed */
+  left: 50%;
+  animation: bounce 2s infinite;
+  z-index: 9999; /* Make sure it's above other content */
+  animation-iteration-count: 1;
+}
+.arrow-up {
+  position: fixed;
+  bottom: 20px; /* adjust as needed */
+  left: 50%;
+  animation: bounce 2s infinite;
+  z-index: 9999; /* Make sure it's above other content */
+  animation-iteration-count: 1;
+}
+@keyframes bounce {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 15px;
+  }
+}
+/* CONTACT PAGE */
+
+label {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.contactText {
+  margin-top: 50px;
+}
+.contact_form {
+  position: relative;
+}
+.field {
+  width: 30vw;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.submitBtn {
+  margin-top: 60px;
+  background-color: transparent;
+  color: black;
+  padding: 10px 20px 10px 20px;
+}
+.submitBtn:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease;
+  border: black;
+}
+.container span {
+  text-transform: uppercase;
+  display: block;
+}
+
+/* HOME PAGE */
+
+.headBanner {
+  margin-top: 150px;
+  color: rgb(0, 0, 0);
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  background-color: white;
+  position: relative;
+  animation-name: text;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  font-stretch: extra-expanded;
+}
+
+.subBanner {
+  font-size: 18px;
+  color: #3e3e3e;
+}
+
+@keyframes text {
+  0% {
+    color: black;
+    margin-bottom: -40px;
+  }
+  30% {
+    letter-spacing: 25px;
+    margin-bottom: -40px;
+  }
+  85% {
+    letter-spacing: 8px;
+    margin-bottom: -40px;
+  }
+  100% {
+  }
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 3s ease-in-out;
+}
+
+/* ABOUT PAGE */
+
+.aboutBanner {
+  margin-top: 150px;
+  color: rgb(0, 0, 0);
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 20px;
+  animation: fadeInAnim ease 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.aboutSub {
+  animation: fadeInAnim ease 6s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+._hidden {
+  display: none;
+}
