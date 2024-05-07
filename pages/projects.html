@@ -9,6 +9,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
     <title>Hello!</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../stylesheet/style.css" />
@@ -17,7 +21,11 @@
     <nav class="navbar navbar-light bg-blue fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" id="navbarText">OPEN ME!</a>
-
+        <i class="bi bi-moon-fill justify-content-end" id="darkMode"></i>
+        <i
+          class="bi bi-brightness-high justify-content-end text-light _hidden"
+          id="lightMode"
+        ></i>
         <div
           class="offcanvas offcanvas-start text-bg-light"
           tabindex="-1"
