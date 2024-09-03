@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css"
       rel="stylesheet"
@@ -18,13 +19,22 @@
     <link rel="stylesheet" href="../stylesheet/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-light bg-blue fixed-top">
+    <nav class="navbar navbar-light bg-blue fixed-top" role="navigation">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="navbarText">OPEN ME!</a>
-        <i class="bi bi-moon-fill justify-content-end" id="darkMode"></i>
+        <!-- Add aria-label to describe the link for screen readers -->
+        <a class="navbar-brand" href="#" id="navbarText" aria-label="Home"
+          >OPEN ME!</a
+        >
+        <!-- Add aria-labels to icons for better accessibility -->
+        <i
+          class="bi bi-moon-fill justify-content-end"
+          id="darkMode"
+          aria-label="Enable Dark Mode"
+        ></i>
         <i
           class="bi bi-brightness-high justify-content-end text-light _hidden"
           id="lightMode"
+          aria-label="Enable Light Mode"
         ></i>
         <div
           class="offcanvas offcanvas-start text-bg-light"
@@ -36,11 +46,12 @@
             <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
               CHOOSE SOMETHING!
             </h5>
+            <!-- Add aria-label to the button to describe its action -->
             <button
               type="button"
               class="btn-close btn-close-white"
               data-bs-dismiss="offcanvas"
-              aria-label="Close"
+              aria-label="Close menu"
             ></button>
           </div>
           <div class="offcanvas-body">
@@ -76,8 +87,7 @@
     </div>
 
     <!-- Moet veranderd worden wanneer er meerdere divs staan en einde van de pagina bekend is. -->
-
-    <div class="arrow-down">
+    <div class="arrow-down" style="display: none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
