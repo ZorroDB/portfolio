@@ -9,3 +9,5 @@
 <p>Best regards,</p>
 
 <p><strong>Zorro</strong></p>
+
+<a href="https://zorrodb.github.io/portfolio/index.html"><strong>Click here to go to my portfolio.</strong></a>
