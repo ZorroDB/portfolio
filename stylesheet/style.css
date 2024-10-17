@@ -51,32 +51,6 @@ body {
   font-size: 16px;
 }
 
-/* ARROW */
-
-.arrow-down {
-  position: fixed;
-  bottom: 20px; /* adjust as needed */
-  left: 50%;
-  animation: bounce 2s infinite;
-  z-index: 9999; /* Make sure it's above other content */
-  animation-iteration-count: 1;
-}
-.arrow-up {
-  position: fixed;
-  bottom: 20px; /* adjust as needed */
-  left: 50%;
-  animation: bounce 2s infinite;
-  z-index: 9999; /* Make sure it's above other content */
-  animation-iteration-count: 1;
-}
-@keyframes bounce {
-  0% {
-    bottom: 0px;
-  }
-  100% {
-    bottom: 15px;
-  }
-}
 /* CONTACT PAGE */
 
 label {
@@ -127,6 +101,14 @@ label {
   animation-duration: 4s;
   animation-iteration-count: 1;
   font-stretch: extra-expanded;
+}
+
+#construction {
+  margin: 0 auto;
+  text-align: center;
+  text-transform: lowercase;
+  font-style: italic;
+  font-size: 10px;
 }
 
 .subBanner {
