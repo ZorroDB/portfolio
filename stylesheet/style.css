@@ -6,12 +6,21 @@ body {
   margin: 0;
   padding: 0;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /* Hero Section */
 #hero {
   background: linear-gradient(135deg, #4a00e0, #8e2de2);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  color: #fff;
 }
 
 .hero-heading {
@@ -28,65 +37,25 @@ body {
 }
 
 .hero-btn {
-  background-color: #ff7f50;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  --c: #ff7f50;
+  line-height: 1.2em;
+  background: conic-gradient(from -135deg at 100% 50%, var(--c) 90deg, #0000 0)
+      0 var(--p, 0%) / var(--s, 0%) 200% no-repeat,
+    conic-gradient(from -135deg at 1.2em 50%, #0000 90deg, var(--c) 0) 100%
+      var(--p, 0%) / var(--s, 0%) 200% no-repeat;
+  transition: 0.4s, background-position 0s;
+  font-size: 1.2em;
+  padding: 10px;
 }
 
 .hero-btn:hover {
-  background-color: #ff4500;
+  --p: 0%;
+  --s: calc(60% + 0.6em);
 }
-
 /* About Section */
 #about {
   background-color: #ffffff;
   padding: 60px 20px;
-}
-
-/* Skills Section */
-#skills {
-  background-color: #222;
-}
-
-.skill-item {
-  margin: 20px 0;
-}
-
-.skill-icon {
-  font-size: 40px;
-  color: #ff7f50;
-  margin-bottom: 10px;
-}
-
-/* Projects Section */
-#projects {
-  background: #ffffff;
-}
-
-.project-card {
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Contact Section */
-#contact {
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
-  padding: 60px 20px;
-}
-
-#contact .btn {
-  background-color: #ff7f50;
-  color: #ffffff;
-}
-
-#contact .btn:hover {
-  background-color: #ff4500;
 }
 
 /* Animations */
@@ -99,4 +68,103 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 1000;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Keep absolute positioning */
+  bottom: 20px; /* Change top to bottom to position at the bottom */
+  left: 50%;
+  transform: translateX(-50%); /* Keep horizontal centering */
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+ul li a .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+ul li a:hover:before {
+  top: 0;
+}
+
+ul li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+ul li:nth-child(2) a:before {
+  background: #55acee;
+}
+
+ul li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+ul li:nth-child(4) a:before {
+  background: #dd4b39;
+}
+/* Optional CSS positioning if not inline */
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #222;
+  color: #f4f4f4;
+}
+.dark-mode .btn {
+  color: #fff;
+  background-color: #555;
 }
