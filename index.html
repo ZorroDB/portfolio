@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <meta
+      name="keywords"
+      content="web developer, portfolio, JavaScript, C#, Python"
+    />
+    <meta name="author" content="Diego" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Add favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -23,8 +36,16 @@
     <title>Diego's Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Diego, a Web Developer & Software Engineer. View projects and skills, and get in touch for collaboration."
+      content="This is my portfolio website, where I showcase my projects and skills."
     />
+    <!-- Add these meta tags -->
+    <meta property="og:title" content="Diego's Portfolio - Web Developer" />
+    <meta
+      property="og:description"
+      content="Professional portfolio showcasing web development projects and skills"
+    />
+    <meta property="og:image" content="./images/preview.jpg" />
+    <meta property="og:url" content="https://your-portfolio-url.com" />
   </head>
   <body>
     <!-- Hero Section -->
@@ -32,15 +53,8 @@
       id="hero"
       class="text-center text-light d-flex flex-column justify-content-center align-items-center"
     >
-      <button
-        id="themeToggle"
-        class="btn btn-outline-secondary position-fixed"
-        style="top: 20px; right: 20px"
-      >
-        <i id="themeIcon" class="fas fa-moon"></i>
-      </button>
       <h1 class="hero-heading">Hello, I'm Diego!</h1>
-      <p class="hero-subheading">Web Developer & Software Engineer</p>
+      <p class="hero-subheading">Web Developer</p>
       <span class="button-text hero-btn"
         ><a href="#projects">Explore my work</a></span
       >
@@ -51,17 +65,26 @@
       <div class="container text-center">
         <h2>About Me</h2>
         <p>
-          I’m Diego, a Web Developer & Software Engineer with a passion for
-          solving problems and creating high-quality applications. I love
-          turning ideas into reality through clean, efficient code, focusing on
-          delivering great results for clients. Currently, I’m enhancing my
-          skills in JavaScript, C#, and Python to build dynamic, scalable
-          solutions. Always eager to learn and grow, I’m committed to staying
-          updated with the latest technologies and best practices in the
-          industry. Let’s connect and bring your ideas to life!
+          I’m Diego, a Web Developer with a passion for solving problems and
+          creating high-quality applications. I love turning ideas into reality
+          through clean, efficient code, focusing on delivering great results
+          for clients. Currently, I’m enhancing my skills in JavaScript, C#, and
+          Python to build dynamic, scalable solutions. Always eager to learn and
+          grow, I’m committed to staying updated with the latest technologies
+          and best practices in the industry. Let’s connect and bring your ideas
+          to life!
         </p>
       </div>
     </section>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 120">
+        <path
+          fill="#f4f4f4"
+          d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
 
     <!-- Skills Section -->
     <section id="skills" class="p-5 text-light bg-dark" data-aos="fade-up">
@@ -83,6 +106,18 @@
           <div class="col-md-3 skill-item">
             <i class="fab fa-react skill-icon"></i>
             <h4>React</h4>
+          </div>
+        </div>
+        <div class="progress mb-3">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 90%"
+            aria-valuenow="90"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            HTML/CSS - 90%
           </div>
         </div>
       </div>
