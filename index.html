@@ -33,6 +33,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     />
     <link rel="stylesheet" href="stylesheet/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Diego's Portfolio</title>
     <meta
       name="description"
@@ -49,15 +50,22 @@
   </head>
   <body>
     <!-- Hero Section -->
-    <section
-      id="hero"
-      class="text-center text-light d-flex flex-column justify-content-center align-items-center"
-    >
-      <h1 class="hero-heading">Hello, I'm Diego!</h1>
-      <p class="hero-subheading">Web Developer</p>
-      <span class="button-text hero-btn"
-        ><a href="#projects">Explore my work</a></span
-      >
+    <section id="hero" class="d-flex align-items-center justify-content-center">
+      <div class="container text-center">
+        <h1 class="hero-heading" data-aos="fade-down">Hello, I'm Diego!</h1>
+        <p class="hero-subheading" data-aos="fade-up" data-aos-delay="200">
+          Building beautiful web experiences
+        </p>
+        <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+          <a
+            href="#projects"
+            class="btn btn-outline-light btn-lg rounded-pill px-5"
+          >
+            View My Work
+          </a>
+        </div>
+      </div>
+      <div class="hero-shape"></div>
     </section>
 
     <!-- About Section -->
@@ -87,37 +95,53 @@
     </div>
 
     <!-- Skills Section -->
-    <section id="skills" class="p-5 text-light bg-dark" data-aos="fade-up">
+    <section id="skills" class="py-6">
       <div class="container">
-        <h2 class="text-center">Skills</h2>
-        <div class="row text-center">
-          <div class="col-md-3 skill-item">
-            <i class="fab fa-html5 skill-icon"></i>
-            <h4>HTML</h4>
+        <h2 class="text-center mb-5" data-aos="fade-up">What I Do Best</h2>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-item text-center">
+              <i class="fab fa-html5 skill-icon"></i>
+              <h4>HTML5</h4>
+              <div class="skill-bar">
+                <div class="progress" style="height: 5px">
+                  <div class="progress-bar" style="width: 100%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3 skill-item">
-            <i class="fab fa-css3-alt skill-icon"></i>
-            <h4>CSS</h4>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-item text-center">
+              <i class="fab fa-css3 skill-icon"></i>
+              <h4>CSS</h4>
+              <div class="skill-bar">
+                <div class="progress" style="height: 5px">
+                  <div class="progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3 skill-item">
-            <i class="fab fa-js-square skill-icon"></i>
-            <h4>JavaScript</h4>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-item text-center">
+              <i class="fab fa-js skill-icon"></i>
+              <h4>Javascript & Typescript</h4>
+              <div class="skill-bar">
+                <div class="progress" style="height: 5px">
+                  <div class="progress-bar" style="width: 70%"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3 skill-item">
-            <i class="fab fa-react skill-icon"></i>
-            <h4>React</h4>
-          </div>
-        </div>
-        <div class="progress mb-3">
-          <div
-            class="progress-bar"
-            role="progressbar"
-            style="width: 90%"
-            aria-valuenow="90"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >
-            HTML/CSS - 90%
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-item text-center">
+              <i class="fab fa-python skill-icon"></i>
+              <h4>Python</h4>
+              <div class="skill-bar">
+                <div class="progress" style="height: 5px">
+                  <div class="progress-bar" style="width: 50%"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -131,7 +155,7 @@
           <div class="col-md-4 mb-4">
             <div class="card project-card shadow">
               <img
-                src="./images/project_dokkie.gif"
+                src="./images/WhoPaysWhat.webp"
                 class="card-img-top"
                 alt="Who Pays what Gif"
               />
@@ -153,7 +177,7 @@
           <div class="col-md-4 mb-4">
             <div class="card project-card shadow">
               <img
-                src="./images/project_portfolio_fotografie.gif"
+                src="./images/Photography.webp"
                 class="card-img-top"
                 alt="Who Pays what Gif"
               />
@@ -175,18 +199,20 @@
           <div class="col-md-4 mb-4">
             <div class="card project-card shadow">
               <img
-                src="./images/burn-elmo.gif"
+                src="./images/HollandiaLogistics.webp"
                 class="card-img-top"
-                alt="Who Pays what Gif"
+                alt="Hollandia Logistics"
               />
               <div class="card-body">
-                <h5 class="card-title">Coming soon...</h5>
-                <p class="card-text">Oh no.. It seems like a... void..</p>
+                <h5 class="card-title">Hollandia Logistics</h5>
+                <p class="card-text">
+                  Website voor een uitzendbureau in de bloemensector
+                </p>
                 <a
-                  href="https://theuselessweb.com"
+                  href="https://hollandia-logistics.nl"
                   class="btn btn-outline-primary"
                   target="_blank"
-                  >Want to take a risk? :o</a
+                  >View website</a
                 >
               </div>
             </div>
@@ -221,21 +247,6 @@
             Send Message
           </button>
         </form>
-        <ul>
-          <li>
-            <a href="#"> <i class="fab fa-facebook-f icon"></i> </a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-twitter icon"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
-          </li>
-        </ul>
-      </div>
     </section>
     <footer class="text-center py-4 bg-dark text-light">
       <p>&copy; 2024 Diego's Portfolio. All rights reserved.</p>

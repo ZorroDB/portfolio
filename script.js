@@ -1,44 +1,3 @@
-// Use modern JavaScript features
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize tooltips
-  const initTooltips = () => {
-    const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    tooltips.forEach((tooltip) => new bootstrap.Tooltip(tooltip));
-  };
-
-  // Improved form handling
-  const handleForm = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-
-    try {
-      // Add loading state
-      const submitBtn = form.querySelector("#submitBtn");
-      submitBtn.disabled = true;
-      submitBtn.innerHTML =
-        '<span class="spinner-border spinner-border-sm"></span> Sending...';
-
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Show success message
-      alert("Thank you for your message! I'll get back to you soon.");
-      form.reset();
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("There was an error sending your message. Please try again.");
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = "Send Message";
-    }
-  };
-
-  // Event listeners
-  document.querySelector("form").addEventListener("submit", handleForm);
-  initTooltips();
-});
-
 function filterProjects(category) {
   const projects = document.querySelectorAll(".project-item");
   projects.forEach((project) => {
@@ -49,52 +8,67 @@ function filterProjects(category) {
   });
 }
 
-// Enhanced smooth scroll
+// Smooth scroll handling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
+  anchor.addEventListener("click", (e) => {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    const headerOffset = 60;
-    const elementPosition = target.offsetTop;
-    const offsetPosition = elementPosition - headerOffset;
+    const target = document.querySelector(anchor.getAttribute("href"));
+    if (!target) return;
 
     window.scrollTo({
-      top: offsetPosition,
+      top: target.offsetTop,
       behavior: "smooth",
     });
   });
 });
 
-// Add reveal animation on scroll
-const revealElements = () => {
-  const elements = document.querySelectorAll(".project-card, .skill-item");
-  elements.forEach((element) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = element.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) {
-      element.classList.add("aos-animate");
+// Intersection Observer for animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
     }
   });
-};
+}, observerOptions);
 
-window.addEventListener("scroll", throttle(revealElements, 100));
+document.querySelectorAll(".skill-item, .project-card").forEach((el) => {
+  observer.observe(el);
+});
 
-// Improved scroll handling with throttle
-const throttle = (func, limit) => {
-  let inThrottle;
-  return function (...args) {
-    if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
-  };
-};
+// Form handling with feedback
+document.querySelector("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const submitBtn = e.target.querySelector("#submitBtn");
+  const originalText = submitBtn.innerHTML;
 
-window.addEventListener(
-  "scroll",
-  throttle(() => {
-    const backToTopButton = document.getElementById("backToTop");
-    backToTopButton.style.display = window.scrollY > 300 ? "block" : "none";
-  }, 100)
-);
+  try {
+    submitBtn.innerHTML =
+      '<span class="spinner-border spinner-border-sm"></span> Sending...';
+    submitBtn.disabled = true;
+
+    // Add your form submission logic here
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Success feedback
+    submitBtn.classList.remove("btn-light");
+    submitBtn.classList.add("btn-success");
+    submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+
+    e.target.reset();
+  } catch (error) {
+    submitBtn.classList.add("btn-danger");
+    submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+  } finally {
+    setTimeout(() => {
+      submitBtn.className = "btn btn-light";
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }, 3000);
+  }
+});
